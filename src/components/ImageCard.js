@@ -1,3 +1,4 @@
+// Image Card component to display the list
 import React from 'react';
 import '../stylesheets/image-card.css';
 

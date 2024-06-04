@@ -1,3 +1,4 @@
+// Dashboard Component
 import React, { useContext, useEffect } from 'react';
 import { AuthContext } from '../context/AuthContext';
 import { ImageContext } from '../context/ImageContext';
@@ -10,12 +11,14 @@ const Dashboard = () => {
     const { images, error, loading, fetchImages } = useContext(ImageContext);
     const navigate = useNavigate();
 
+    // If user is not logged in --> Redirect to /login
     useEffect(() => {
         if (!user) {
             navigate("/login");
         }
     }, [user, navigate]);
 
+    // Fetch images when component is mounted
     useEffect(()=>{
         fetchImages()
     },[])

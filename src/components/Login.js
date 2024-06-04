@@ -1,3 +1,4 @@
+// Login component 
 import React, { useContext, useState } from 'react';
 import { AuthContext } from '../context/AuthContext';
 import '../stylesheets/login.css'
@@ -19,9 +20,10 @@ const Login = () => {
     };
     const { error, loading, login, successMessage } = useContext(AuthContext);
 
-
+    // Handle event when submit button is clicked
     const handleSubmit = async (event) => {
         event.preventDefault();
+        // Login action is called in AuthContext
         await login({ ...formData});
       if (!error) {
         console.log("Not Error ---->", error)
