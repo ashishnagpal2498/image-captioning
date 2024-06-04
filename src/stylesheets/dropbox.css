@@ -1,0 +1,29 @@
+.drop-box {
+  border: 2px dashed #cccccc;
+  border-radius: 4px;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.drop-box p {
+  margin: 0;
+}
+
+.title-box{
+  display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.success-message {
+  margin-top: 10px;
+  color: white;
+  font-weight: bold;
+}
+
+.gallery-button{
+  display: block;
+  text-align: right;
+  margin: 10px;
+}
