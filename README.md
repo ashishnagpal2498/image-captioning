@@ -1,4 +1,4 @@
-# Image Captioning
+# Image Hashtags/Captioning
 
 1. User registration
 
