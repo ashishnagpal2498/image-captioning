@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
-import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../context/AuthContext"; // Adjust the path as needed
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../context/AuthContext";
 import "../stylesheets/profile-reg.css";
 
 const SignUp = () => {
@@ -84,8 +84,9 @@ const SignUp = () => {
   return (
     <div className="container">
       <div className="title-container">
-        <h1 className="title">Profile Registration</h1>
+        <h1 className="title">SignUp</h1>
       </div>
+      <Link to={"/login"}>Already Registered User ? Login</Link>
       <form className={"register-form"} onSubmit={handleSubmit}>
         <div className="input-group">
           <input

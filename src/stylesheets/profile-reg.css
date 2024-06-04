@@ -1,0 +1,88 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.title {
+    font-style: italic;
+    margin: 2rem 0;
+}
+
+.register-form {
+    margin: 2rem 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-group {
+    margin-bottom: 1rem;
+    position: relative;
+    width: 300px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 1em;
+    border-radius: 20px;
+    border: none;
+    margin: 10px 0;
+}
+
+.error {
+    color: red;
+    font-size: 0.8rem;
+    display: block;
+    padding-left: 15px;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+button:disabled {
+    opacity: 0.5;
+    color: #777;
+    cursor: not-allowed;
+}
+
+.success-message {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 5;
+}
+
+@media (max-width: 550px){
+    .input-group {
+        margin-bottom: 1rem;
+        position: relative;
+        width: 200px;
+    }
+}

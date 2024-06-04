@@ -1,6 +1,5 @@
 import React, { createContext, useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
 
 export const AuthContext = createContext();
 
@@ -9,22 +8,23 @@ export const AuthProvider = ({ children }) => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const [successMessage, setSuccessMessage] = useState(false);
-  const navigate = useNavigate();
 
   const login = async (userData) => {
     setLoading(true);
     try {
-      const result = await axios.post("https://express-t4.onrender.com/api/login", {
+      console.log("UserData", userData)
+      const result = await axios.post("https://ym5vucaoxs5e3h6guymwn3w6hy0goxqn.lambda-url.us-east-1.on.aws/", {
         ...userData
       }, { "Content-Type": "application/json" });
 
       if (result.status === 200) {
         setSuccessMessage(true);
-        setUser({ username: userData.username });
+
+        setUser({ username: userData.email, token: result.data.token });
+        localStorage.setItem(user, { username: userData.email, token: result.data.token })
         setTimeout(() => {
           setSuccessMessage(false);
-          navigate("/");
-        }, 2000);
+        }, 3000);
       }
     } catch (error) {
       setError("Invalid Username or Password");
@@ -62,6 +62,7 @@ export const AuthProvider = ({ children }) => {
 
   const logout = () => {
     setUser(null);
+    localStorage.removeItem(user)
   };
 
   return (
